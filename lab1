@@ -65,4 +65,27 @@ int main()
         m=b;
     }
     printf("%d",m);*/
+
+
+    
+int a,b,c,d,e,f,W,Wx,Wy,Wz,y,x;
+    scanf("%d%d%d%d%d%d",&a,&b,&c,&d,&e,&f);
+
+    W = (a*e)-(b*d);
+
+    if(W==0){
+      printf("nieoznaczony");
+    }
+    else{
+
+    Wx = (c*e)-(b*f);
+    Wy = (a*f)-(c*d);
+
+    y = Wy/W
+    x = Wx/W
+
+
+    }
+    printf("%d%d",x,y);
+
     
