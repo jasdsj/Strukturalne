@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    /*printf("Hello World");
+
+    printf("to jest pierwsza linijka, \n a to ma byc w drugiej");
+    printf("");
+
+    int a;
+    scanf("%d",&a);
+    printf("Ta liczba to %d",a);
+
+    float x;
+    scanf("%f",&x);
+    printf("Ta liczba to %.2f",x);
+
+    double x;
+    scanf("%lf",&x);
+    printf("Ta liczba to %f",x);
+
+    int a, b, c;
+
+    scanf("%d%d%d",&a,&b,&c);
+
+    printf("%d\n%d\n%d",a,b,c);
+
+    int a;
+    scanf("%d",&a);
+    printf("%d", a+1);
+
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    printf("%d",(float)(a+b+c)/3);
+
+    float x;
+    scanf("%f",&x);
+    printf("Ta liczba to %f",sqrt(x));
+
+    float x;
+    scanf("%f",&x);
+    printf("Ta liczba to %f",fabs(x));
+
+    float x;
+    scanf("%f",&x);
+    printf("Ta liczba to %e",x);
+
+
+
+    int x;
+    scanf("%d",&x);
+    if(x<0){
+        x = -x;
+    }
+        printf("%d",x); 
+
+    int a,b,m;
+    scanf("%d%d",&a,&b);
+    if(a>b){
+        m=a;
+    }
+    else
+    {
+        m=b;
+    }
+    printf("%d",m);*/
+    
