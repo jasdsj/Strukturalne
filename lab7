@@ -55,14 +55,50 @@ void wymieszaj(unsigned int n, int * tab1, int * tab2, int * tab3){
         if(x % 2 ==0){
         tab3[i] = tab1[i/2];
         tab3[i+1] = tab2[i/2];
-        x +=1; }
+        x+=1;}
 
-        else{tab3[i+1] = tab1[i/2];
+        else{
+        tab3[i+1] = tab1[i/2];
         tab3[i] = tab2[i/2];
         x+=1;}
         }
     }
 }
+
+int skalar(unsigned int n, int * tab1, int * tab2){
+    int x = 0;
+    int i;
+    for(i=0;i<n;i++){
+       x += tab1[i]*tab2[i];
+    }
+    return x;
+}
+
+void odwroc(unsigned int n, int * tab)
+{
+    int pom;
+    int i;
+    int * table = tab;
+    for(i=0;i<n/2;i++){
+       pom = tab[i];
+       tab[i]=tab[n-i-1];
+       tab[n-i-1]=pom;
+    }
+
+}
+
+void lewo(unsigned int n, int * tab)
+{
+    int pom=tab[0];
+    int i;
+    int * table = tab;
+    for(i=1;i<n;i++){
+
+       tab[i-1]=tab[i];
+    }
+tab[n-1] = pom;
+}
+
 
 int main(){
 
@@ -73,6 +109,8 @@ int tab3[]={0,0,0,0,0,0,0,0,0,0};
     wypisz(5,tab2);
     wymieszaj(5,tab1,tab2,tab3);
     wypisz(10,tab3);
+    lewo(5, tab1);
+    wypisz(5,tab1);
 
 }
 
