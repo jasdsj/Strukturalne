@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<math.h>
+
+void wypisz(unsigned int n, int * tab)
+{
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+}
+
+
+void przepisz(unsigned int n, int * tab1, int * tab2){
+    int i;
+    for(i=0;i<n;i++){
+        tab2[i] = tab1[i];
+    }
+}
+
+
+void przepiszodw(unsigned int n, int * tab1, int * tab2){
+    int i;
+    for(i=0;i<n;i++){
+        tab2[i] = tab1[n-i-1];
+    }
+}
+
+void suma(unsigned int n, int * tab1, int * tab2, int * tab3){
+    int i;
+    for(i=0;i<n*2;i++){
+        if(i < n){
+        tab3[i] = tab1[i];}
+        else{
+        tab3[i] = tab2[i-n];}
+    }
+}
+
+void suma2(unsigned int n, int * tab1, int * tab2, int * tab3){
+    int i;
+    for(i=0;i<n*2;i++){
+        if(i % 2 == 1){
+        tab3[i] = tab1[(i-1)/2];}
+        else{
+        tab3[i] = tab2[i/2];}
+
+    }
+}
+
+void wymieszaj(unsigned int n, int * tab1, int * tab2, int * tab3){
+    int i,j;
+    int x= 0;
+    for(i=0;i<n*2;i++){
+        if(i % 2 ==0){
+        if(x % 2 ==0){
+        tab3[i] = tab1[i/2];
+        tab3[i+1] = tab2[i/2];
+        x +=1; }
+
+        else{tab3[i+1] = tab1[i/2];
+        tab3[i] = tab2[i/2];
+        x+=1;}
+        }
+    }
+}
+
+int main(){
+
+int tab1[]={1,2,3,4,9};
+int tab2[]={5,6,7,8,7};
+int tab3[]={0,0,0,0,0,0,0,0,0,0};
+    wypisz(5,tab1);
+    wypisz(5,tab2);
+    wymieszaj(5,tab1,tab2,tab3);
+    wypisz(10,tab3);
+
+}
+
+main();
