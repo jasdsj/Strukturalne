@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void szyfrowanie( char* napis, char* szyfr)
+{
+    int i, j, dl;
+    for (dl=0; szyfr[dl]!=0;dl++){
+        
+    }
+    for (i=0; j=0;i++,j++)
+    {
+        if(j>=dl)
+            j=0;
+        if(napis[i]+szyfr[j]-96>122)
+            napis[i]-=25;
+        napis[i]+=szyfr[j]-96;
+    }
+}
+
+int main()
+{
+    char napis[40]="matma";
+    char szyfr[40]="baca";
+    szyfrowanie(napis, szyfr);
+    printf(napis);
+    return 0
+}
+
+main();
+
