@@ -190,8 +190,8 @@ for (i=0;i<n;i++)
 }
 
 void odwroc(int **t, unsigned int n, unsigned int m){
-int **r=alokuj(3,3);
-przepisz(t,r,3,3);
+int **r=alokuj(n,m);
+przepisz(t,r,n,m);
 int i, j;
 for (i=0;i<n;i++)
 {
@@ -223,12 +223,32 @@ for (i=0;i<n;i++)
 }
 }
 
+
+void tr(int **t, unsigned int n, unsigned int m){
+int **r=alokuj(m,n);
+int i, j;
+for (i=0;i<n;i++)
+{
+    for (j=0;j<n;j++)
+    {
+       r[j][i] = t[i][j];
+
+    }
+}wypisz(r,m,n);
+}
+
 int main(){
 
 int **t=alokuj(3,3);
 wczytaj(t,3,3);
-dol(t,3,3);
 wypisz(t,3,3);
+tr(t,3,3);
+
+
+
+
+
+
 
 /*
 
