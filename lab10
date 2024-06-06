@@ -1,0 +1,164 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct element{
+int i;
+struct element *next;
+};
+
+
+struct elemnet *utworz(){
+return NULL;
+};
+
+void wyczysc(struct element* Lista){
+struct element *wsk = Lista;
+while(Lista!=NULL){
+    Lista = Lista->next;
+    free(wsk);
+    wsk = Lista;
+}
+}
+
+struct element * dodajnapoczatek(struct element* Lista, int a){
+struct element *wsk = malloc(sizeof(struct element));
+wsk->i=a;
+wsk->next=Lista;
+return wsk;
+}
+
+struct element * dodajnakoniec(struct element* Lista, int a){
+struct element *wsk;
+if(Lista==NULL){
+Lista = wsk = malloc(sizeof(struct element));
+}
+else{
+    wsk=Lista;
+while(wsk->next!=NULL)
+{
+
+    wsk=wsk->next;
+}
+wsk->next=malloc(sizeof(struct element));
+wsk =wsk->next;
+}
+wsk->i=a;
+wsk->next=NULL;
+return Lista;
+  };
+
+void wypisz(struct element * Lista){
+while(Lista!=NULL){
+    printf("%d\n",  Lista->i);
+        Lista=Lista->next;
+
+}
+}
+
+struct element * dodajodpowiednio(struct element * Lista, struct element* elem, int a){
+struct element * wsk = malloc(sizeof(struct element));
+wsk -> i = a;
+if(elem==NULL){
+    wsk->next=Lista;
+Lista = wsk;
+}
+else{
+    wsk->next=elem->next;
+    elem->next=wsk;
+}
+return Lista;
+};
+
+struct element * usun(struct element * Lista, int a){
+    struct element *wsk, *wsk2;
+    if ( Lista == NULL){
+        return Lista;
+    }
+    wsk=Lista;
+    if(Lista->i==a){
+        Lista = Lista->next;
+        free(wsk);
+        return Lista;
+    }
+    else{
+        while((wsk->next!=NULL)&&(wsk->next->i!=a))
+        {
+           wsk=wsk->next;
+        }
+        if(wsk->next!=NULL){
+            wsk2=wsk->next;
+            wsk->next=wsk2->next;
+            free(wsk2);
+        }
+
+    }
+    return Lista;
+}
+
+struct element *utworzglowa(){
+    struct element * wsk = malloc(sizeof(struct element));
+    wsk->next=NULL;
+return wsk;
+};
+
+
+void wyczyscglowa(struct element* Lista){
+struct element *wsk=Lista->next;
+Lista=wsk;
+while(Lista!=NULL){
+        Lista = Lista->next;
+        free(wsk);
+        wsk=Lista;
+}
+}
+
+
+void dodajnapoczatekglowa(struct element *Lista, int a){
+struct element *wsk = malloc(sizeof(struct element));
+wsk->i = a;
+wsk->next = Lista->next;
+Lista->next=wsk;
+}
+
+
+void suma(struct element * Lista){
+    int sum = 0;
+while(Lista!=NULL){
+        sum+=Lista->i;
+        Lista=Lista->next;
+}printf("%d", sum);
+}
+
+
+struct zespolona{
+    double re, im;
+};
+
+struct zespolona dodaj(struct zespolona z1, struct zespolona z2){
+
+struct zespolona z3;
+z3.re = z1.re + z2.re;
+z3.im = z1.im + z2.im;
+return z3;
+};
+
+
+void wypisz_zespolona(struct zespolona z)
+{
+    printf("%f+%f*i", z.re, z.im);
+
+}
+
+int main(){
+struct element * lista=utworz();
+
+lista = dodajnakoniec(lista,4);
+lista = dodajnakoniec(lista,15);
+lista=dodajnapoczatek(lista,-2);
+wypisz(lista);
+suma(lista);
+
+
+}
+
+main();
